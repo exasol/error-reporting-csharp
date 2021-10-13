@@ -1,6 +1,6 @@
 # error-reporting-csharp
 ## Description
-Contains a C# Library for describing errors and a nuget tool for scraping said errors in projects and transforming them to an xml file to be picked up by the global exasol error catalog.
+Contains a C# Library for describing errors and a nuget tool for collecting said errors in projects and storing them in an .xml file to be picked up by the global exasol error catalog.
 ## Based on
 Based on https://github.com/exasol/error-reporting-java
 
