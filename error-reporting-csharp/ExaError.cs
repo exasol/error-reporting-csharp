@@ -11,6 +11,7 @@ namespace Exasol.ErrorReporting
         {
             // empty on purpose
         }
+
         /// <summary>
         /// Get a builder for error messages.
         /// </summary>
