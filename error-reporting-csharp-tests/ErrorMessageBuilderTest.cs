@@ -15,16 +15,16 @@ namespace Exasol.ErrorReporting.Tests
         [Fact]
         void testMessage()
         {
-            string message = new ErrorMessageBuilder("E-ERJ-TEST-1").Message("Test message.").ToString();
-            Assert.True(message == "E-ERJ-TEST-1: Test message.");
+            string message = new ErrorMessageBuilder("E-ERC-TEST-1").Message("Test message.").ToString();
+            Assert.True(message == "E-ERC-TEST-1: Test message.");
         }
 
         [Fact]
         void testSingleMitigation()
         {
-            string message = new ErrorMessageBuilder("E-ERJ-TEST-1").Message("Something went wrong.")
+            string message = new ErrorMessageBuilder("E-ERC-TEST-1").Message("Something went wrong.")
                     .Mitigation("Fix it.").ToString();
-            Assert.True(message == "E-ERJ-TEST-1: Something went wrong. Fix it.");
+            Assert.True(message == "E-ERC-TEST-1: Something went wrong. Fix it.");
         }
     }
 }

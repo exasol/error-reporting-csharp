@@ -7,7 +7,7 @@ namespace Exasol.ErrorReporting.Tests
         [Fact]
         void TestCreateErrorCodeMessage()
         {
-            Assert.True(ExaError.MessageBuilder("E-ERJ-TEST-1").ToString() == "E-ERJ-TEST-1");
+            Assert.True(ExaError.MessageBuilder("E-ERC-TEST-1").ToString() == "E-ERC-TEST-1");
         }
     }
 }
