@@ -5,7 +5,7 @@ namespace Exasol.ErrorReporting
 {
 
     /// <summary>
-    /// Builder for exasol error messages
+    /// Builder for Exasol error messages
     /// </summary>
     public class ErrorMessageBuilder
     {
@@ -14,7 +14,7 @@ namespace Exasol.ErrorReporting
         private readonly List<string> mitigations = new List<string>();
 
         /// <summary>
-        /// ErrorMessageBuilder constructor
+        /// ErrorMessageBuilder constructor.
         /// </summary>
         /// <param name="errorCode">errorCode of the error you're reporting</param>
         public ErrorMessageBuilder(in string errorCode)
@@ -32,7 +32,7 @@ namespace Exasol.ErrorReporting
             return this;
         }
         /// <summary>
-        /// Describe ways to mitigate the problem
+        /// Describe ways to mitigate the problem.
         /// </summary>
         /// <param name="mitigation"></param>
         /// <returns></returns>
@@ -42,7 +42,7 @@ namespace Exasol.ErrorReporting
             return this;
         }
         /// <summary>
-        /// In case of unforeseen  errors, ask the user to report the issue.
+        /// In case of unforeseen errors, ask the user to report the issue.
         /// </summary>
         /// <returns></returns>
         public ErrorMessageBuilder TicketMitigation()
@@ -63,13 +63,13 @@ namespace Exasol.ErrorReporting
             if (messageBuilder.Length > 0)
             {
                 result.Append(": ");
-                result.Append((messageBuilder.ToString()));
+                result.Append(messageBuilder.ToString());
             }
 
             if (mitigations.Count == 1)
             {
                 result.Append(" ");
-                result.Append((mitigations[0]));
+                result.Append(mitigations[0]);
             }
             else if (mitigations.Count > 1)
             {
