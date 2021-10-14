@@ -1,5 +1,6 @@
 # error-reporting-csharp
 
+[![.NET](https://github.com/exasol/error-reporting-csharp/actions/workflows/dotnet.yml/badge.svg)](https://github.com/exasol/error-reporting-csharp/actions/workflows/dotnet.yml)
 ## Description
 
 Contains a C# library for describing errors.
