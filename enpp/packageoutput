@@ -1,0 +1,7 @@
+Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  error-reporting-csharp -> C:\repos\error-reporting-csharp\error-reporting-csharp\bin\Release\netcoreapp3.1\error-reporting-csharp.dll
+  Successfully created package 'C:\repos\error-reporting-csharp\package\error-reporting-csharp.0.1.0.nupkg'.
