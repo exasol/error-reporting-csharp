@@ -40,9 +40,9 @@ jobs:
     - name: get package path - create set batch file
       run: ExtractNugetPackagePath\ExtractNugetPackagePath.exe
 
-    # An alternative would be to build a ps1 file instead of a bat file (or both) and go from there
+    #dot sourcing the ps1
     - name: call generated batch file
-      run: .\Invoke-Environment.ps1 setnpp.bat
+      run: . .\setnppps.ps1
       
     - name: echo 
       run: $env:NUGETPACKAGEPATH
