@@ -33,6 +33,9 @@ jobs:
     - name: set variable
       run: $cmdOutput = .\enpp\ExtractNugetPackagePath.exe
 
+    - name: echo
+      run: $cmdOutput
+
     - name: NuGet Add Source
       run: dotnet nuget add source --username pj-spoelders --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/EXASOL/index.json"
     
