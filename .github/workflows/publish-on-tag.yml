@@ -36,7 +36,7 @@ jobs:
       run: dotnet pack error-reporting-csharp --configuration Release -o package > packageoutput
 
     - name: set variable
-      run: $cmdOutput = .\enpp\ExtractNugetPackagePath.exe ; $cmdOutput; echo "NPPATH="$cmdOutput | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append;
+      run: $cmdOutput = .\enpp\ExtractNugetPackagePath.exe ; $cmdOutput; echo "NPPATH="+$cmdOutput | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append;
 
     # - name: echo
     #   run: $cmdOutput
