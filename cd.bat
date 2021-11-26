@@ -6,6 +6,4 @@ dotnet pack error-reporting-csharp --configuration Release -o package > packageo
 ExtractNugetPackagePath\ExtractNugetPackagePath.exe
 call setnpp.bat
 echo %NUGETPACKAGEPATH%
-::nuget stuff
-dotnet nuget add source --username pj-spoelders --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/EXASOL/index.json"
-dotnet nuget push %NUGETPACKAGEPATH% --api-key ${{ secrets.GITHUB_TOKEN }} --source "github"
+
