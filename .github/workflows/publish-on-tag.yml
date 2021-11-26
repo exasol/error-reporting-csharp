@@ -41,7 +41,7 @@ jobs:
       run: ExtractNugetPackagePath\ExtractNugetPackagePath.exe
 
     - name: call generated batch file
-      run: call setnpp.bat
+      run: Invoke-BatchFile setnpp.bat
       
     - name: echo 
       run: echo %NUGETPACKAGEPATH%
