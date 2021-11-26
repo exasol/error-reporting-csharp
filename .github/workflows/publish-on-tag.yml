@@ -1,9 +1,10 @@
 name: .NET
 
-push:
-  branches:
+on:
+  push:
+    branches:
       - "!*"
-  tags:
+    tags:
       - "*"
 
 jobs:
