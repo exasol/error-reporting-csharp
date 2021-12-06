@@ -3,6 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>error_reporting_csharp</RootNamespace>
+    <Authors>pj-spoelders</Authors>
+    <Company>Exasol</Company>
+    <RepositoryUrl>https://github.com/exasol/error-reporting-csharp</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
