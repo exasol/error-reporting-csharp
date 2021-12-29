@@ -1,1 +1,0 @@
-SET NUGETPACKAGEPATH=C:\repos\error-reporting-csharp\package\error-reporting-csharp.0.1.0.nupkg

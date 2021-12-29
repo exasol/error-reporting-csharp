@@ -1,10 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>error_reporting_csharp</RootNamespace>
-    <Authors>pj-spoelders</Authors>
-    <Company>Exasol</Company>
+    <Authors>Pieterjan Spoelders</Authors>
+    <Company>Exasol AG</Company>
     <RepositoryUrl>https://github.com/exasol/error-reporting-csharp</RepositoryUrl>
   </PropertyGroup>
 
