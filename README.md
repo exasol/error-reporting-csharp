@@ -88,4 +88,6 @@ Result:
     * Delete something.
     * Create larger partition.
 
+## Information for Users
 
+- [Changelog](doc/changes/changelog.md)
