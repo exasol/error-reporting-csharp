@@ -53,9 +53,7 @@ ExaError.MessageBuilder("E-TEST-2")
     .ToString();
 ```
 
-Result:
-
-    `E-TEST-2: Not enough space on device. Delete something.`
+Result: `E-TEST-2: Not enough space on device. Delete something.`
 
 You can use string interpolation in mitigations as well.
 
@@ -66,9 +64,7 @@ ExaError.MessageBuilder("E-TEST-2")
     .ToString();
 ```
 
-Result: 
-
-    `E-TEST-2: Not enough space on device '/dev/sda1'. Delete something from '/dev/sda1'.`
+Result: `E-TEST-2: Not enough space on device '/dev/sda1'. Delete something from '/dev/sda1'.`
 
 You can chain `Mitigation` definitions if you want to tell the users that there is more than one solution.
 
