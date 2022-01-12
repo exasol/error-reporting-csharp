@@ -11,7 +11,7 @@ Major difference is this library is simplified by the string interpolation featu
 
 ## Installation
 
-- Make sure you have the .NET core SDK ( use the dotnet SDK installation step on GitHub runners ).
+- Make sure you have the .NET core SDK (use the dotnet SDK installation step on GitHub runners).
 
 - You'll need to add the Exasol Github NuGet repository to the NuGet package manager on your local machine or the GitHub CI runner, like so: 
    - On GitHub CI runners:
@@ -31,7 +31,7 @@ ExaError.MessageBuilder("E-TEST-1").Message("Something went wrong.").ToString();
 
 Result: `E-TEST-1: Something went wrong.`
 
-### Parameters/String interpolation
+### String Interpolation
 
 Since C# has string interpolation you should use that in messages and mitigations where needed, instead of parameters (which are currently not supported):
 
@@ -40,9 +40,7 @@ ExaError.MessageBuilder("E-TEST-2")
     .Message($"Unknown input: '{input}'.").ToString();
 ```
 
-Result:
-
-    E-TEST-2: Unknown input: 'unknown'.`
+Result: `E-TEST-2: Unknown input: 'unknown'.`
 
 ### Mitigations
 
