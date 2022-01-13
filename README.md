@@ -15,13 +15,13 @@ Major difference is this library is simplified by the string interpolation featu
 
 - You'll need to add the Exasol Github NuGet repository to the NuGet package manager on your local machine or the GitHub CI runner, like so: 
    - On GitHub CI runners:
-	```
+	
 	dotnet nuget add source --username <username/or ci user> --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/EXASOL/index.json"
-        ```
+        
    - You can use a GitHub PAT on your local system:
-    ```
-    dotnet nuget add source --username <username/or ci user> --password <yourPAT> --store-password-in-clear-text --name github "https://nuget.pkg.github.com/EXASOL/index.json"
-    ```
+    
+    	dotnet nuget add source --username <username/or ci user> --password <yourPAT> --store-password-in-clear-text --name github "https://nuget.pkg.github.com/EXASOL/index.json"
+    
 
 - You can then add the package to your projects: `$ dotnet add <PROJECT> package error-reporting-csharp --version 0.2.0`
 ## Usage
