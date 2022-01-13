@@ -83,11 +83,11 @@ ExaError.MessageBuilder("E-TEST-2")
 
 Result:
 
-    ```
+    
     E-TEST-2: Not enough space on device. Known mitigations:
     * Delete something.
     * Create larger partition.
-    ```
+    
 
 ## Information for Users
 
