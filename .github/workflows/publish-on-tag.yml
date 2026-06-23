@@ -1,49 +1,44 @@
-name: publish to GH
+name: Publish to GitHub Packages
 
 on:
   push:
-    branches:
-      - "!*"
     tags:
       - "*"
 
-jobs:
-  build:
+permissions:
+  contents: read
+  packages: write
 
+jobs:
+  publish:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v7
-    - name: Setup .NET 10
-      uses: actions/setup-dotnet@v5
-      with:
-        dotnet-version: 10.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      - uses: actions/checkout@v7
 
-    # - name: run batch file
-    #   run: ./cd.bat
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
 
-    #- name: rmdir package
+      - name: Restore dependencies
+        run: dotnet restore
 
-    - name: pack
-      run: dotnet pack error-reporting-csharp --configuration Release -o package > packageoutput
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
 
-    #https://github.com/pj-spoelders/ExtractNugetPackagePath
-    - name: set variable
-      run: $cmdOutput = python .\print_package_path.py; $cmdOutput; echo "NPPATH=$cmdOutput" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append;
+      - name: Test
+        run: dotnet test --configuration Release --no-build --verbosity normal
 
-    # - name: echo
-    #   run: $cmdOutput
+      - name: Pack
+        run: dotnet pack error-reporting-csharp/error-reporting-csharp.csproj --configuration Release --no-build --output package
 
-    - name: NuGet Add Source
-      run: dotnet nuget add source --username exa-ci-1 --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/EXASOL/index.json"
-    
-    # https://stackoverflow.com/questions/57889719/how-to-push-nuget-package-in-github-actions
-    - name: NuGet Push to GH NuGet
-      run: dotnet nuget push ${{ env.NPPATH }} -s "github" --api-key ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish package
+        shell: pwsh
+        run: |
+          $packages = @(Get-ChildItem -Path package -Filter '*.nupkg')
+          if ($packages.Count -ne 1) {
+            throw "Expected exactly one package, found $($packages.Count)."
+          }
+          dotnet nuget push $packages[0].FullName --source "https://nuget.pkg.github.com/EXASOL/index.json" --api-key "${{ secrets.GITHUB_TOKEN }}" --skip-duplicate
 
