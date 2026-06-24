@@ -1,4 +1,4 @@
-# error-reporting-csharp 0.4.0, released 2026-xx-xx
+# error-reporting-csharp 1.0.0, released 2026-06-24
 
 Code Name: Publishing Improvements
 
